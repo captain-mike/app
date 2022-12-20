@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css" id="versionThis">
+    <script>
+        document.querySelector('#versionThis').href="css/style.css?ver=" + Math.random() * 10000
+        let url = new URLSearchParams(location.search);
+        url.set('ver',Math.random() * 10000);
+        var newRelativePathQuery = window.location.pathname + '?' + url.toString();
+        history.pushState(null, '', newRelativePathQuery);
+    </script>
+</head>
+<body>
+    
+    <div id="wrap">
+
+        <!--video & audio-->
+        <h1 class="little-title">Tanti auguri di buon natale da Mario</h1>
+        <video id="bigVideo" paused loop>
+            <source src="video/video1.mp4" type="video/mp4"></source>
+        </video>
+        <audio id="bigAudio" paused>
+            <source src="audio/We Wish You A Merry Christmas Upbeat.mp3" type="audio/mp3"></source>
+        </audio>
+        
+    <div id="form-area">
+        <h3 id="text-back-title">Vuoi inviare anche tu una palla di natale?</h3>
+        <input type="text" id="nome" placeholder="Scrivi il tuo nome">
+        <a id="share" href="whatsapp://send?text=Mario http://wp-admin.it/app/?nome=Mario" data-action="share/whatsapp/share">Condividi su whatsapp</a>
+    </div>
+    
+    
+    <!--splash page-->
+    <div id="splash">
+        <h1>Qualcuno ti ha inviato una palla di natale</h1>
+        <div id="palla"></div>
+        <h2>Vuoi sapere chi?</h2>
+        <button id="play">Clicca qui!</button>
+    </div>
+    </div>
+
+    <script id="versionThisToo" src="js/script.js"></script>
+    <script>
+        document.querySelector('#versionThisToo').src="js/script.js?ver=" + Math.random() * 10000
+        url = new URLSearchParams(location.search);
+        </script>
+        <script src="js/christmas-snow-3d-main/packages/snow3d/build/snow3d.js"></script>
+</body>
+</html>
