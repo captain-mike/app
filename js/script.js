@@ -41,12 +41,13 @@ play.addEventListener('click',function(){
 
 let nome = document.querySelector('#nome');
 let share = document.querySelector('#share');
-
+//scrittura nome
 nome.addEventListener('keyup',function(){
     let url = location.origin +  location.pathname;
     share.href = `whatsapp://send?text=Scopri chi ti ha inviato una palla di natale ${url}?nome=${nome.value}`;
 })
 
+//tasto condividi
 share.addEventListener('click',function(e){
     e.preventDefault();
     if(!nome.value){
@@ -58,6 +59,7 @@ share.addEventListener('click',function(e){
     }
 })
 
+//mostro il nome del mittente
 window.onload = function(){
     let url = new URLSearchParams(location.search);
     if(url.has('nome')){
