@@ -16,6 +16,10 @@ body{
     text-align: center;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 #wrap{
     background-image: url(../images/bg.jpg);
     background-position: center;
@@ -23,6 +27,7 @@ body{
     height: 100vh;
     overflow: hidden;
     max-width: 450px;
+    position: fixed;
 }
 
 h1, h2{
@@ -38,12 +43,32 @@ h1{
 }
 h2{
     font-size:3.5rem;
-    margin-top: 40vh;
+    margin-top: 46vh;
 }
 
 .little-title{
-    font-size:2rem;
+    font-size:4rem;
     font-family: stampato;
+    animation-name: moveIn;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+.little-title .name-text.activate{
+    opacity: 0;
+    position: relative;
+    top: -30px;
+    animation-name: fadeIn;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeIn{
+    0%{opacity: 0;top:-30px}
+    100%{opacity: 1;top:0px}
 }
 
 #splash{
@@ -81,7 +106,8 @@ h2{
 
 video {
     position: fixed;
-    top: 22vh;
+    top: 29vh;
+    top: 29vh;
     left: -29%;
     width: 171%;
     height: 48vh;
@@ -96,34 +122,68 @@ video {
     font-size:3rem;
     color: red;
     background-color: gold;
+    font-family: stampato;
 }
 
 
 div#form-area {
-    position: absolute;
+    position: fixed;
+    box-sizing: border-box;
     bottom: 0;
-    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: all 1s;
+    background-image: url(../images/bg.jpg);
+}
+div#form-area.open {
+    height: 100vh;
+    padding: 20vh 20px;
 }
 
 
 #text-back-title {
-    font-size: 2rem;
+    font-size: 3.5rem;
     margin-bottom: 17px;
 }
 input{
     width: 100%;
-    height: 40px;
+    height: 60px;
+    padding: 15px;
     display: block;
+    font-size: 1.5rem;
+    margin-bottom:15px
 }
 
-#share{
-    background-color:red;
+#share {
+    background-color: #169114;
     display: block;
     width: 100%;
-    height: 30px;
+    height: 55px;
     text-align: center;
+    color: #fff;
+    line-height: 55px;
+    font-size: 1.8rem;
+    position: relative;
+}
+#share::before,
+#share::after {
+    content:"";
+    background-image: url(../images/whatsapp.svg);
+    background-repeat: no-repeat;
+    text-decoration: none;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 5px;
+    top: 5px;
     color:#fff;
-    line-height: 30px;
+}
+#share::after {
+    right: 5px;
+    left: auto;
 }
 
 .hide{

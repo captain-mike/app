@@ -11,6 +11,7 @@ const file3 = 'video/video3.mp4';
 play.addEventListener('click',function(){
 
     document.querySelector('#splash').style.display = 'none';
+    document.querySelector('.little-title .name-text').classList.add('activate')
     audio.play();
     video.play();
     setTimeout(() => {
@@ -27,6 +28,11 @@ play.addEventListener('click',function(){
         video.play()
         video.playbackRate = 1.30;
         video.style.transform = 'rotateY(180deg)';
-    }, 24000)
+    }, 35000)
+    
+    setTimeout(() => {
+        video.pause();
+        document.querySelector('#form-area').classList.add('open')
+    }, 50000)
 })
 
