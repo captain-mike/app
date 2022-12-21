@@ -36,3 +36,10 @@ play.addEventListener('click',function(){
     }, 50000)
 })
 
+let nome = document.querySelector('#nome');
+let share = document.querySelector('#share');
+
+nome.addEventListener('keyup',function(){
+    let url = location.origin +  location.pathname;
+    share.href = `whatsapp://send?text=Scopri chi ti ha inviato una palla di natale ${url}/?nome=${nome.value}`;
+})
