@@ -154,6 +154,10 @@ input{
     margin-bottom:15px
 }
 
+input.empty{
+    outline: 3px solid red;
+}
+
 #share {
     background-color: #169114;
     display: block;
