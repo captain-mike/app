@@ -11,6 +11,8 @@ const file3 = 'video/video3.mp4';
 
 play.addEventListener('click',function(){
 
+    const elem = document.documentElement;
+    if (elem.requestFullscreen) {elem.requestFullscreen()}
     document.querySelector('#splash').style.display = 'none';
     nomeTesto.classList.add('activate')
     audio.play();
