@@ -22,7 +22,6 @@ play.addEventListener('click',function(){
         video.load()
         video.play()
         video.playbackRate = 1.30;
-        video.style.transform = 'rotateY(180deg)';
     }, 14000)
     
     setTimeout(() => {
@@ -30,7 +29,6 @@ play.addEventListener('click',function(){
         video.load()
         video.play()
         video.playbackRate = 1.30;
-        video.style.transform = 'rotateY(180deg)';
     }, 35000)
     
     setTimeout(() => {
