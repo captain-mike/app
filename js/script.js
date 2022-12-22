@@ -56,11 +56,3 @@ share.addEventListener('click',function(e){
         location.href = share.href;
     }
 })
-
-//mostro il nome del mittente
-window.onload = function(){
-    let url = new URLSearchParams(location.search);
-    if(url.has('nome')){
-        nomeTesto.textContent = url.get('nome');
-    }
-}

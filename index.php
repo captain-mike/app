@@ -7,14 +7,7 @@
     <title>Scopri chi ti ha scritto!</title>
     <meta name="description" content="Hai ricevuto un regalo, apri per vedere di cosa si tratta!">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css" id="versionThis">
-    <script>
-        document.querySelector('#versionThis').href="css/style.css?ver=" + Math.random() * 10000
-        let url = new URLSearchParams(location.search);
-        url.set('ver',Math.random() * 10000);
-        var newRelativePathQuery = window.location.pathname + '?' + url.toString();
-        history.pushState(null, '', newRelativePathQuery);
-    </script>
+    <link rel="stylesheet" href="css/style.css?ver=<?=rand(0,9999)?>" id="versionThis">
 </head>
 <body>
     
@@ -23,7 +16,7 @@
         <!--video & audio-->
         <h1 class="little-title">
             Tanti auguri di buon natale da 
-            <span class="name-text"></span>
+            <span class="name-text"><?=$_GET['nome'] ?? ''?></span>
         </h1>
         <video id="bigVideo" paused loop>
             <source src="video/video1.mp4" type="video/mp4"></source>
@@ -50,11 +43,7 @@
     </div>
     </div>
 
-    <script id="versionThisToo" src="js/script.js"></script>
-    <script>
-        document.querySelector('#versionThisToo').src="js/script.js?ver=" + Math.random() * 10000
-        url = new URLSearchParams(location.search);
-        </script>
-        <script src="js/christmas-snow-3d-main/packages/snow3d/build/snow3d.js"></script>
+    <script src="js/script.js?ver=<?=rand(0,9999)?>"></script>
+    <script src="js/christmas-snow-3d-main/packages/snow3d/build/snow3d.js"></script>
 </body>
 </html>
