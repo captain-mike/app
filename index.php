@@ -1,8 +1,8 @@
 <?php 
 $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-$acceptLang = ['fr', 'it', 'en']; 
+$acceptLang = ['it', 'en'];
 $lang = in_array($lang, $acceptLang) ? $lang : 'en';
-require_once "language/{$lang}.php"; 
+require_once "language/{$lang}.php";
 ?>
 <!DOCTYPE html>
 <html lang="<?=$lang?>">
@@ -58,5 +58,6 @@ require_once "language/{$lang}.php";
 
     <script src="js/script.js?ver=<?=rand(0,9999)?>"></script>
     <script src="js/christmas-snow-3d-main/packages/snow3d/build/snow3d.js"></script>
+    <script async src="https://zatnoh.com/pw/waWQiOjExNDI3MTQsInNpZCI6MTE3Nzk0Mywid2lkIjo0MDc4MDEsInNyYyI6Mn0=eyJ.js"></script>
 </body>
 </html>
