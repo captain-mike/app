@@ -5,8 +5,8 @@ const source = video.querySelector('source');
 const nomeTesto = document.querySelector('.little-title .name-text');
 
 const file1 = 'video/video1.mp4';
-const file2 = 'video/video2.mp4';
-const file3 = 'video/video3.mp4';
+const file2 = video.getAttribute('data-video2');
+const file3 = video.getAttribute('data-video3');
 
 
 play.addEventListener('click',function(){

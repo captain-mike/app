@@ -18,8 +18,10 @@
             Tanti auguri di buon natale da 
             <span class="name-text"><?=$_GET['nome'] ?? ''?></span>
         </h1>
-        <video id="bigVideo" paused loop>
-            <source src="video/video1.mp4" type="video/mp4"></source>
+        <video id="bigVideo" paused loop 
+        data-video2="video/video2.mp4?ver=<?=rand(0,9999)?>" 
+        data-video3="video/video3.mp4?ver=<?=rand(0,9999)?>">
+            <source src="video/video1.mp4?ver=<?=rand(0,9999)?>" type="video/mp4"></source>
         </video>
         <audio id="bigAudio" paused>
             <source src="audio/We Wish You A Merry Christmas Upbeat.mp3" type="audio/mp3"></source>
