@@ -10,13 +10,17 @@
     <link rel="stylesheet" href="css/style.css?ver=<?=rand(0,9999)?>" id="versionThis">
 </head>
 <body>
+    <div id="bg" class="card_bg"></div>
     
     <div id="wrap">
+    <div id="wrap-control" class="card_bg">
 
         <!--video & audio-->
         <h1 class="little-title">
             Tanti auguri di buon natale da 
-            <span class="name-text"><?=$_GET['nome'] ?? ''?></span>
+           
+            <span class="name-text"><?=!empty($_GET['nome']) ? str_replace('-',' ', $_GET['nome']) : ''?></span>
+            
         </h1>
         <video id="bigVideo" paused loop 
         data-video2="video/video2.mp4?ver=<?=rand(0,9999)?>" 
@@ -27,21 +31,22 @@
             <source src="audio/We Wish You A Merry Christmas Upbeat.mp3" type="audio/mp3"></source>
         </audio>
         
-    <div id="form-area">
-        <h3 id="text-back-title">Vuoi inviare anche tu una palla di natale?</h3>
-        <input type="text" id="nome" placeholder="Scrivi il tuo nome">
-        <a id="share" 
-        href="" 
-        data-action="share/whatsapp/share">Inviala con whatsapp</a>
-    </div>
-    
-    
-    <!--splash page-->
-    <div id="splash">
-        <h1>Qualcuno ti ha inviato una palla di natale</h1>
-        <div id="palla"></div>
-        <h2>Vuoi sapere chi?</h2>
-        <button id="play">Clicca qui!</button>
+        <div id="form-area" class="card_bg">
+            <h3 id="text-back-title">Vuoi inviare anche tu una palla di natale?</h3>
+            <input type="text" id="nome" placeholder="Scrivi il tuo nome">
+            <a id="share" 
+            href="" 
+            data-action="share/whatsapp/share">Inviala con whatsapp</a>
+        </div>
+        
+        
+        <!--splash page-->
+        <div id="splash">
+            <h1>Qualcuno ti ha inviato una palla di natale</h1>
+            <div id="palla"></div>
+            <h2>Vuoi sapere chi?</h2>
+            <button id="play">Clicca qui!</button>
+        </div>
     </div>
     </div>
 

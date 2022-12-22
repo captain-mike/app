@@ -14,6 +14,21 @@ body{
     font-family: stampato;
     color: #fff;
     text-align: center;
+    background-color: #000;
+}
+
+#bg{
+    filter: blur(7px);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+}
+
+.card_bg{
+    background-image: url(../images/bg.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 *{
@@ -21,13 +36,18 @@ body{
 }
 
 #wrap{
-    background-image: url(../images/bg.jpg);
-    background-position: center;
-    background-size: cover;
     height: 100vh;
     overflow: hidden;
     max-width: 450px;
-    position: fixed;
+    margin: 0 auto;
+
+}
+
+#wrap-control{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: -36px;
 }
 
 h1, h2{
@@ -75,7 +95,7 @@ h2{
     background-image: url(../images/bg.jpg);
     height: 100vh;
     width: 100%;
-    position: fixed;
+    position:absolute;
     top: 0;
     left: 0;
     transition: all 0.3s;
@@ -105,19 +125,19 @@ h2{
 }
 
 video {
-    position: fixed;
     top: 29vh;
     top: 29vh;
     left: -62px;
+    margin-left: -46px;
     width: 120%;
     height: 48vh;
 }
 
 #play{
-    position: fixed;
+    position:absolute;
     bottom: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 80px;
     font-size:3rem;
     color: red;
@@ -127,7 +147,7 @@ video {
 
 
 div#form-area {
-    position: fixed;
+    position:absolute;
     box-sizing: border-box;
     bottom: 0;
     height: 0;
