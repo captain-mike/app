@@ -41,13 +41,14 @@ body{
     max-width: 450px;
     margin: 0 auto;
     position: fixed;
+    top: 0;
 }
 
 #wrap-control{
     position: relative;
     height: 100%;
     width: 100%;
-    top: -36px;
+    padding-top:5vh;
 }
 
 h1, h2{
@@ -59,7 +60,6 @@ h1, h2{
 
 h1{
     font-size:4rem;
-    margin-top:5vh;
 }
 h2{
     font-size:3.5rem;
@@ -93,12 +93,13 @@ h2{
 
 #splash{
     background-image: url(../images/bg.jpg);
-    height: 100vh;
     width: 100%;
     position:absolute;
     top: 0;
     left: 0;
+    bottom: 0;
     transition: all 0.3s;
+    padding-top:5vh;
 }
 
 #palla{
@@ -123,16 +124,6 @@ h2{
     75%{transform: translate(0px, -10px)}
     100%{transform: translate(0px, -30px)}
 }
-
-video {
-    top: 29vh;
-    top: 29vh;
-    left: -62px;
-    margin-left: -46px;
-    width: 120%;
-    height: 48vh;
-}
-
 #play{
     position:absolute;
     bottom: 0;
@@ -143,7 +134,20 @@ video {
     color: red;
     background-color: gold;
     font-family: stampato;
+    margin: 0;
 }
+
+
+
+video {
+    top: 29vh;
+    top: 29vh;
+    left: -62px;
+    margin-left: -46px;
+    width: 120%;
+    height: 48vh;
+}
+
 
 
 div#form-area {
