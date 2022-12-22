@@ -63,5 +63,9 @@ window.onload = marginAutoOnWrap();
 
 function marginAutoOnWrap(){
     let wrap = document.querySelector('#wrap');
-    wrap.style.left = ( window.innerWidth / 2 ) - (wrap.clientWidth / 2) + 'px';
+    if(window.innerWidth > 450){
+        wrap.style.left = ( window.innerWidth / 2 ) - (wrap.clientWidth / 2) + 'px';
+    }else{
+        wrap.style.left = '';
+    }
 }
