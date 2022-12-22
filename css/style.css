@@ -40,7 +40,7 @@ body{
     overflow: hidden;
     max-width: 450px;
     margin: 0 auto;
-
+    position: fixed;
 }
 
 #wrap-control{

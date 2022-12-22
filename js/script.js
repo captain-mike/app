@@ -56,3 +56,12 @@ share.addEventListener('click',function(e){
         location.href = share.href;
     }
 })
+
+
+window.addEventListener('resize',marginAutoOnWrap)
+window.onload = marginAutoOnWrap();
+
+function marginAutoOnWrap(){
+    let wrap = document.querySelector('#wrap');
+    wrap.style.left = ( window.innerWidth / 2 ) - (wrap.clientWidth / 2) + 'px';
+}
