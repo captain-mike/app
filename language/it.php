@@ -7,5 +7,6 @@ const TEXT = [
     'wish' => 'Tanti auguri di buon natale da',
     'end_question' => 'Vuoi inviare anche tu una palla di natale?',
     'share' => 'Inviala con whatsapp',
-    'title' => 'Scopri chi ti ha scritto!'
+    'title' => 'Scopri chi ti ha scritto!',
+    'placeholder' => 'Scrivi il tuo nome'
 ];
