@@ -42,7 +42,7 @@ let share = document.querySelector('#share');
 //scrittura nome
 nome.addEventListener('keyup',function(){
     let url = location.origin +  location.pathname;
-    share.href = `whatsapp://send?text=Scopri chi ti ha inviato una palla di natale ${url}?nome=${encodeURIComponent(nome.value)}`;
+    share.href = `whatsapp://send?text=Scopri chi ti ha inviato una palla di natale ${url}?nome=${encodeURIComponent(nome.value.replaceAll(' ','-'))}`;
 })
 
 //tasto condividi
