@@ -12,7 +12,7 @@
 <body>
     <div id="bg" class="card_bg"></div>
     
-    <div id="wrap">
+    <div id="wrap" class="card_bg">
     <div id="wrap-control" class="card_bg">
 
         <!--video & audio-->
@@ -41,7 +41,7 @@
         
         
         <!--splash page-->
-        <div id="splash">
+        <div id="splash" class="card_bg">
             <h1>Qualcuno ti ha inviato una palla di natale</h1>
             <div id="palla"></div>
             <h2>Vuoi sapere chi?</h2>
