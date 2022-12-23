@@ -8,5 +8,6 @@ const TEXT = [
     'end_question' => 'Do you want to send a Christmas ball too?',
     'share' => 'Send it with whatsapp',
     'title' => 'Find out who wrote to you!',
-    'placeholder' => 'Your name'
+    'placeholder' => 'Your name',
+    'loading' => 'Loading...'
 ];

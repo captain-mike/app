@@ -253,3 +253,7 @@ input.empty{
 .hide{
     display: none;
 }
+
+.not_ready{
+    z-index: 2147483655 !important;
+}

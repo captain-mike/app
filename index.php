@@ -18,7 +18,7 @@ require_once "language/{$lang}.php";
 <body>
     <div id="bg" class="card_bg"></div>
     
-    <div id="wrap" class="card_bg">
+    <div id="wrap" class="card_bg not_ready">
     <div id="wrap-control" class="card_bg">
 
         <!--video & audio-->
@@ -33,6 +33,7 @@ require_once "language/{$lang}.php";
         data-video3="video/video3.mp4?ver=<?=rand(0,9999)?>">
             <source id="mp4" src="video/video1.mp4?ver=<?=rand(0,9999)?>" type="video/mp4"></source>
             <source id="webm" src="video/video1.webm?ver=<?=rand(0,9999)?>" type="video/webm"></source>
+            <source id="ogg" src="video/video1.Ogg?ver=<?=rand(0,9999)?>" type="video/ogg"></source>
         </video>
         <audio id="bigAudio" paused>
             <source src="audio/We Wish You A Merry Christmas Upbeat.mp3" type="audio/mp3"></source>

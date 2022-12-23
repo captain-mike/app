@@ -3,16 +3,26 @@
     const audio = document.querySelector('#bigAudio');
     const sourceMp4 = video.querySelector('#mp4');
     const sourceWebm = video.querySelector('#webm');
+    const sourceOgg = video.querySelector('#ogg');
     const nomeTesto = document.querySelector('.little-title .name-text');
 
-    async function load() {
-        const file1Mp4 = await preloadVideo('video/video1.mp4');
-        const file2Mp4 = await preloadVideo(video.getAttribute('data-video2'));
-        const file3Mp4 = await preloadVideo(video.getAttribute('data-video3'));
+    const vid1 = 'video/video1.mp4';
+    const vid2 = video.getAttribute('data-video2');
+    const vid3 = video.getAttribute('data-video3')
 
-        const file1Webm = await preloadVideo(mp4ToWebm('video/video1.mp4'));
-        const file2Webm = await preloadVideo(mp4ToWebm(video.getAttribute('data-video2')));
-        const file3Webm = await preloadVideo(mp4ToWebm(video.getAttribute('data-video3')));
+    async function load() {
+        
+        let [file1Mp4, file2Mp4, file3Mp4, file1Webm, file2Webm, file3Webm] = await Promise.all([
+            preloadVideo(vid1),
+            preloadVideo(vid2),
+            preloadVideo(vid3),
+            preloadVideo(mp4ToWebm(vid1)),
+            preloadVideo(mp4ToWebm(vid2)),
+            preloadVideo(mp4ToWebm(vid3)),
+            preloadVideo(mp4ToOgg(vid1)),
+            preloadVideo(mp4ToOgg(vid2)),
+            preloadVideo(mp4ToOgg(vid3)),
+        ])
 
         return {
             file1Mp4: file1Mp4,
@@ -21,6 +31,9 @@
             file1Webm: file1Webm,
             file2Webm: file2Webm,
             file3Webm: file3Webm,
+            file1Ogg: file1Ogg,
+            file2Ogg: file2Ogg,
+            file3Ogg: file3Ogg,
         }
     }
 
@@ -31,6 +44,7 @@
 
             play.addEventListener('click',function(){
         
+                document.querySelector('#wrap').classList.remove('not_ready');
                 const elem = document.documentElement;
                 if (elem.requestFullscreen) {elem.requestFullscreen()}
                 document.querySelector('#splash').style.display = 'none';
@@ -38,11 +52,13 @@
 
                 sourceMp4.setAttribute('src', res.file1Mp4);
                 sourceWebm.setAttribute('src', res.file1Webm);
+                sourceOgg.setAttribute('src', res.file1Ogg);
                 audio.play();
                 video.play();
                 setTimeout(() => {
                     sourceMp4.setAttribute('src', res.file2Mp4);
                     sourceWebm.setAttribute('src', res.file2Webm);
+                    sourceOgg.setAttribute('src', res.file2Ogg);
                     video.load()
                     video.play()
                     video.playbackRate = 1.30;
@@ -51,6 +67,7 @@
                 setTimeout(() => {
                     sourceMp4.setAttribute('src', res.file3Mp4);
                     sourceWebm.setAttribute('src', res.file3Webm);
+                    sourceOgg.setAttribute('src', res.file3Ogg);
                     video.load()
                     video.play()
                     video.playbackRate = 1.30;
@@ -75,6 +92,9 @@
         
         function mp4ToWebm(filename) {
             return filename.replace('mp4', 'webm');
+        }
+        function mp4ToOgg(filename) {
+            return filename.replace('mp4', 'Ogg');
         }
         
         
