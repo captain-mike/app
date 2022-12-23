@@ -12,7 +12,7 @@
 
     async function load() {
         
-        let [file1Mp4, file2Mp4, file3Mp4, file1Webm, file2Webm, file3Webm] = await Promise.all([
+        let [file1Mp4, file2Mp4, file3Mp4, file1Webm, file2Webm, file3Webm, file1Ogg, file2Ogg, file3Ogg] = await Promise.all([
             preloadVideo(vid1),
             preloadVideo(vid2),
             preloadVideo(vid3),
