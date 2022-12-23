@@ -31,7 +31,8 @@ require_once "language/{$lang}.php";
         <video id="bigVideo" paused loop 
         data-video2="video/video2.mp4?ver=<?=rand(0,9999)?>" 
         data-video3="video/video3.mp4?ver=<?=rand(0,9999)?>">
-            <source src="video/video1.mp4?ver=<?=rand(0,9999)?>" type="video/mp4"></source>
+            <source id="mp4" src="video/video1.mp4?ver=<?=rand(0,9999)?>" type="video/mp4"></source>
+            <source id="webm" src="video/video1.webm?ver=<?=rand(0,9999)?>" type="video/webm"></source>
         </video>
         <audio id="bigAudio" paused>
             <source src="audio/We Wish You A Merry Christmas Upbeat.mp3" type="audio/mp3"></source>

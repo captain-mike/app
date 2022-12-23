@@ -1,12 +1,18 @@
 const play = document.querySelector('#play');
 const video = document.querySelector('#bigVideo');
 const audio = document.querySelector('#bigAudio');
-const source = video.querySelector('source');
+const sourceMp4 = video.querySelector('#mp4');
+const sourceWebm = video.querySelector('#webm');
 const nomeTesto = document.querySelector('.little-title .name-text');
 
 const file1 = 'video/video1.mp4';
 const file2 = video.getAttribute('data-video2');
 const file3 = video.getAttribute('data-video3');
+
+function mp4ToWebm(filename) {
+    console.log(filename.replace('mp4','webm'))
+    return filename.replace('mp4','webm');
+}
 
 
 play.addEventListener('click',function(){
@@ -18,14 +24,16 @@ play.addEventListener('click',function(){
     audio.play();
     video.play();
     setTimeout(() => {
-        source.setAttribute('src', file2);
+        sourceMp4.setAttribute('src', file2);
+        sourceWebm.setAttribute('src', mp4ToWebm(file2));
         video.load()
         video.play()
         video.playbackRate = 1.30;
     }, 14000)
     
     setTimeout(() => {
-        source.setAttribute('src', file3);
+        sourceMp4.setAttribute('src', file3);
+        sourceWebm.setAttribute('src', mp4ToWebm(file3));
         video.load()
         video.play()
         video.playbackRate = 1.30;
