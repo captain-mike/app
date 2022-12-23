@@ -17,6 +17,42 @@ body{
     background-color: #000;
 }
 
+#loader {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+#loader:before {
+    content: "";
+    background-image: url(../images/spinner-frame-1.svg);
+    width: 150px;
+    height: 150px;
+    display: block;
+    background-size: cover;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-duration: 60s;
+    position: absolute;
+    top: calc(50% - 75px);
+    left: calc(50% - 75px);
+}
+#loader div {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 8px;
+    text-shadow: 5px 5px 3px #000;
+}
+@keyframes rotate{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(3600deg)}
+}
+
 #bg{
     filter: blur(7px);
     width: 100%;
@@ -215,5 +251,5 @@ input.empty{
 }
 
 .hide{
-    opacity: 0;
+    display: none;
 }
