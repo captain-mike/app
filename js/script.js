@@ -1,39 +1,49 @@
-const play = document.querySelector('#play');
-const video = document.querySelector('#bigVideo');
-const audio = document.querySelector('#bigAudio');
-const sourceMp4 = video.querySelector('#mp4');
-const sourceWebm = video.querySelector('#webm');
-const nomeTesto = document.querySelector('.little-title .name-text');
+async function init(){
 
-const file1 = 'video/video1.mp4';
-const file2 = video.getAttribute('data-video2');
-const file3 = video.getAttribute('data-video3');
-
-function mp4ToWebm(filename) {
-    console.log(filename.replace('mp4','webm'))
-    return filename.replace('mp4','webm');
-}
-
-
-play.addEventListener('click',function(){
-
-    const elem = document.documentElement;
-    if (elem.requestFullscreen) {elem.requestFullscreen()}
-    document.querySelector('#splash').style.display = 'none';
-    nomeTesto.classList.add('activate')
-    audio.play();
-    video.play();
-    setTimeout(() => {
-        sourceMp4.setAttribute('src', file2);
-        sourceWebm.setAttribute('src', mp4ToWebm(file2));
-        video.load()
-        video.play()
+    const play = document.querySelector('#play');
+    const video = document.querySelector('#bigVideo');
+    const audio = document.querySelector('#bigAudio');
+    const sourceMp4 = video.querySelector('#mp4');
+    const sourceWebm = video.querySelector('#webm');
+    const nomeTesto = document.querySelector('.little-title .name-text');
+    
+    const file1 = preloadVideo('video/video1.mp4');
+    const file2mp4 = await preloadVideo(video.getAttribute('data-video2'));
+    const file3mp4 = await preloadVideo(video.getAttribute('data-video3'));
+    
+    const file2Webm = await preloadVideo(mp4ToWebm(video.getAttribute('data-video2')));
+    const file3Webm = await preloadVideo(mp4ToWebm(video.getAttribute('data-video3')));
+    
+    function mp4ToWebm(filename) {
+        console.log(filename.replace('mp4','webm'))
+        return filename.replace('mp4','webm');
+    }
+    
+    async function preloadVideo(src) {
+        const res = await fetch(src);
+        const blob = await res.blob();
+        return URL.createObjectURL(blob);
+    }
+    
+    play.addEventListener('click',function(){
+        
+        const elem = document.documentElement;
+        if (elem.requestFullscreen) {elem.requestFullscreen()}
+        document.querySelector('#splash').style.display = 'none';
+        nomeTesto.classList.add('activate')
+        audio.play();
+        video.play();
+        setTimeout(() => {
+            sourceMp4.setAttribute('src', file2mp4);
+            sourceWebm.setAttribute('src', file2Webm);
+            video.load()
+            video.play()
         video.playbackRate = 1.30;
     }, 14000)
     
     setTimeout(() => {
-        sourceMp4.setAttribute('src', file3);
-        sourceWebm.setAttribute('src', mp4ToWebm(file3));
+        sourceMp4.setAttribute('src', file3mp4);
+        sourceWebm.setAttribute('src', file3Webm);
         video.load()
         video.play()
         video.playbackRate = 1.30;
@@ -77,3 +87,6 @@ function marginAutoOnWrap(){
         wrap.style.left = '';
     }
 }
+}
+
+init();
