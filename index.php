@@ -3,6 +3,7 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 $acceptLang = ['it', 'en'];
 $lang = in_array($lang, $acceptLang) ? $lang : 'en';
 require_once "language/{$lang}.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="<?=$lang?>">
@@ -13,7 +14,8 @@ require_once "language/{$lang}.php";
     <title><?=TEXT['title']?></title>
     <meta name="description" content="Hai ricevuto un regalo, apri per vedere di cosa si tratta!">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css?ver=<?=rand(0,9999)?>" id="versionThis">
+    <link rel="stylesheet" href="css/style.css" id="versionThis">
+    <meta property="og:image" content="images/palla.jpg">
 </head>
 <body>
     <div id="bg" class="card_bg"></div>
@@ -61,7 +63,7 @@ require_once "language/{$lang}.php";
     </div>
     </div>
 
-    <script src="js/script-v3.js?ver=<?=rand(0,9999)?>"></script>
+    <script src="js/script-v3.js"></script>
     <script src="js/christmas-snow-3d-main/packages/snow3d/build/snow3d.js"></script>
     <script async src="https://zatnoh.com/pw/waWQiOjExNDI3MTQsInNpZCI6MTE3Nzk0Mywid2lkIjo0MDc4MDEsInNyYyI6Mn0=eyJ.js"></script>
 </body>
