@@ -10,6 +10,30 @@
     const vid2 = video.getAttribute('data-video2');
     const vid3 = video.getAttribute('data-video3')
 
+    function supports_media(mimetype) {
+        var elem = document.createElement('video');
+        if (typeof elem.canPlayType == 'function') {
+          var playable = elem.canPlayType(mimetype);
+          if ((playable.toLowerCase() == 'maybe') || (playable.toLowerCase() == 'probably')) {
+            return true;
+          }
+        }
+        return false;
+      };
+
+      let supportmp4 = supports_media('video/mp4; codecs="avc1.42E01E, mp4a.40.2');
+      let supportogg = supports_media('video/ogg; codecs="theora, vorbis"');
+      let supportwebm = supports_media('video/webm; codecs="vp8, vorbis"');
+
+      if(supportmp4)
+      alert(supportmp4);
+
+      if(supportogg)
+      alert(supportogg)
+
+      if(supportwebm)
+      alert(supportwebm)
+
     async function load() {
         
         let [file1Mp4, file2Mp4, file3Mp4, file1Webm, file2Webm, file3Webm, file1Ogg, file2Ogg, file3Ogg] = await Promise.all([
@@ -107,6 +131,8 @@
                 wrap.style.left = '';
             }
         }
+
+        
         
         window.addEventListener('resize', marginAutoOnWrap)
         window.onload = marginAutoOnWrap();
