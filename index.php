@@ -1,7 +1,7 @@
 <?php 
 $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 $acceptLang = ['it', 'en'];
-$lang = in_array($lang, $acceptLang) ? $lang : 'en';
+$lang = in_array($lang, $acceptLang) ? $lang : 'it';
 require_once "language/{$lang}.php";
 
 ?>
