@@ -15,7 +15,7 @@ require_once "language/{$lang}.php";
     <meta name="description" content="Hai ricevuto un regalo, apri per vedere di cosa si tratta!">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css" id="versionThis">
-    <meta property="og:image" content="images/palla.jpg">
+    <meta property="og:image" content="https://christmas-shares.com/images/palla.png">
 </head>
 <body>
     <div id="bg" class="card_bg"></div>
