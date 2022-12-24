@@ -10,42 +10,16 @@
     const vid2 = video.getAttribute('data-video2');
     const vid3 = video.getAttribute('data-video3')
 
-    function supports_media(mimetype) {
-        var elem = document.createElement('video');
-        if (typeof elem.canPlayType == 'function') {
-          var playable = elem.canPlayType(mimetype);
-          if ((playable.toLowerCase() == 'maybe') || (playable.toLowerCase() == 'probably')) {
-            return true;
-          }
-        }
-        return false;
-      };
-
-      let supportmp4 = supports_media('video/mp4; codecs="avc1.42E01E, mp4a.40.2');
-      let supportogg = supports_media('video/ogg; codecs="theora, vorbis"');
-      let supportwebm = supports_media('video/webm; codecs="vp8, vorbis"');
-
-      if(supportmp4)
-      alert('mp4 ' +supportmp4);
-
-      if(supportogg)
-      alert('ogg ' + supportogg)
-
-      if(supportwebm)
-      alert('webm ' + supportwebm)
 
     async function load() {
         
-        let [file1Mp4, file2Mp4, file3Mp4, file1Webm, file2Webm, file3Webm, file1Ogg, file2Ogg, file3Ogg] = await Promise.all([
+        let [file1Mp4, file2Mp4, file3Mp4, file1Webm, file2Webm, file3Webm] = await Promise.all([
             preloadVideo(vid1),
             preloadVideo(vid2),
             preloadVideo(vid3),
             preloadVideo(mp4ToWebm(vid1)),
             preloadVideo(mp4ToWebm(vid2)),
             preloadVideo(mp4ToWebm(vid3)),
-            preloadVideo(mp4ToOgg(vid1)),
-            preloadVideo(mp4ToOgg(vid2)),
-            preloadVideo(mp4ToOgg(vid3)),
         ])
 
         return {
@@ -54,10 +28,7 @@
             file3Mp4: file3Mp4,
             file1Webm: file1Webm,
             file2Webm: file2Webm,
-            file3Webm: file3Webm,
-            file1Ogg: file1Ogg,
-            file2Ogg: file2Ogg,
-            file3Ogg: file3Ogg,
+            file3Webm: file3Webm
         }
     }
 
@@ -76,13 +47,11 @@
 
                 sourceMp4.setAttribute('src', res.file1Mp4);
                 sourceWebm.setAttribute('src', res.file1Webm);
-                sourceOgg.setAttribute('src', res.file1Ogg);
                 audio.play();
                 video.play();
                 setTimeout(() => {
                     sourceMp4.setAttribute('src', res.file2Mp4);
                     sourceWebm.setAttribute('src', res.file2Webm);
-                    sourceOgg.setAttribute('src', res.file2Ogg);
                     video.load()
                     video.play()
                     video.playbackRate = 1.30;
@@ -91,7 +60,6 @@
                 setTimeout(() => {
                     sourceMp4.setAttribute('src', res.file3Mp4);
                     sourceWebm.setAttribute('src', res.file3Webm);
-                    sourceOgg.setAttribute('src', res.file3Ogg);
                     video.load()
                     video.play()
                     video.playbackRate = 1.30;
