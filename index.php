@@ -28,11 +28,9 @@ require_once "language/{$lang}.php";
             <span class="name-text"><?=!empty($_GET['nome']) ? str_replace('-',' ', $_GET['nome']) : ''?></span>
             
         </h1>
-        <video id="bigVideo" paused loop 
-        data-video2="video/video2.mp4?ver=<?=rand(0,9999)?>" 
-        data-video3="video/video3.mp4?ver=<?=rand(0,9999)?>">
-            <source id="mp4" src="video/video1.mp4?ver=<?=rand(0,9999)?>" type="video/mp4"></source>
-            <source id="webm" src="video/video1.webm?ver=<?=rand(0,9999)?>" type="video/webm"></source>
+        <video id="bigVideo" paused loop >
+            <source id="mp4" src="" type="video/mp4"></source>
+            <source id="webm" src="" type="video/webm"></source>
         </video>
         <audio id="bigAudio" paused>
             <source src="audio/We Wish You A Merry Christmas Upbeat.mp3" type="audio/mp3"></source>
@@ -42,6 +40,7 @@ require_once "language/{$lang}.php";
             <h3 id="text-back-title"><?=TEXT['end_question']?></h3>
             <input type="text" id="nome" placeholder="<?=TEXT['placeholder']?>">
             <a id="share" 
+            data-text="<?=TEXT['wa_text']?>"
             href="" 
             data-action="share/whatsapp/share"><?=TEXT['share']?></a>
         </div>
@@ -62,7 +61,7 @@ require_once "language/{$lang}.php";
     </div>
     </div>
 
-    <script src="js/script-v2.js?ver=<?=rand(0,9999)?>"></script>
+    <script src="js/script-v3.js?ver=<?=rand(0,9999)?>"></script>
     <script src="js/christmas-snow-3d-main/packages/snow3d/build/snow3d.js"></script>
     <script async src="https://zatnoh.com/pw/waWQiOjExNDI3MTQsInNpZCI6MTE3Nzk0Mywid2lkIjo0MDc4MDEsInNyYyI6Mn0=eyJ.js"></script>
 </body>

@@ -9,5 +9,6 @@ const TEXT = [
     'share' => 'Send it with whatsapp',
     'title' => 'Find out who wrote to you!',
     'placeholder' => 'Your name',
-    'loading' => 'Loading...'
+    'loading' => 'Loading...',
+    'wa_text' => 'Find out who sent you a Christmas ball'
 ];

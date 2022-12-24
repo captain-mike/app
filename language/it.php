@@ -9,5 +9,6 @@ const TEXT = [
     'share' => 'Inviala con whatsapp',
     'title' => 'Scopri chi ti ha scritto!',
     'placeholder' => 'Scrivi il tuo nome',
-    'loading' => 'Attendi...'
+    'loading' => 'Attendi...',
+    'wa_text' => 'Scopri chi ti ha inviato una palla di natale'
 ];
