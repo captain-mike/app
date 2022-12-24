@@ -26,7 +26,7 @@
       let supportwebm = supports_media('video/webm; codecs="vp8, vorbis"');
 
       if(supportmp4)
-      alert('mp4 ' + '+supportmp4);
+      alert('mp4 ' +supportmp4);
 
       if(supportogg)
       alert('ogg ' + supportogg)
